@@ -20,6 +20,12 @@ function ProjetCard({ text, img, title }: any) {
 
 function TemoignageCard({ text, image }: any) {
 
+  let [ishover, sethover] = useState(false);
+
+  useEffect(() => {
+    console.log(ishover)
+  })
+
   return (
     <>
       <div className='temoignage flex gap-3 flex-col shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-md' onClick={() => sethover(false)}>
