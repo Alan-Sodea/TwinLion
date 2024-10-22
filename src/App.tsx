@@ -52,12 +52,51 @@ function App() {
 
   let [translateX, setTranslateX] = useState(0);
   let [menuOpen, setMenuOpen] = useState(false);
-  const [images, setImages] = useState(["Templates/img_7.jpg", "Templates/img_2.jpg", "Templates/img_4.jpg", "Templates/img_3.jpg", "Templates/solaire.jpeg", "Templates/maison-ecologique.jpg", "Templates/forage.jpg"]);
-  setImages(["Templates/img_7.jpg", "Templates/img_2.jpg", "Templates/img_4.jpg", "Templates/img_3.jpg", "Templates/solaire.jpeg", "Templates/maison-ecologique.jpg", "Templates/forage.jpg"])
+  const [images, setImages] = useState(["public/img_7.jpg", "public/img_2.jpg", "public/img_4.jpg", "public/img_3.jpg", "public/solaire.jpeg", "public/maison-ecologique.jpg", "public/forage.jpg"]);
 
   const [titres, setTitres] = useState(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"]);
-  setTitres(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"])
 
+  useEffect(() => {
+    setImages(["public/img_7.jpg", "public/img_2.jpg", "public/img_4.jpg", "public/img_3.jpg", "public/solaire.jpeg", "public/maison-ecologique.jpg", "public/forage.jpg"])
+    setTitres(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"])
+    setServices([
+      {
+        image: images[0],
+        text: "Nous réalisons des projets de construction de bâtiments, allant des structures résidentielles aux complexes commerciaux. De la fondation à la finition, nous garantissons des constructions solides et conformes aux normes les plus élevées en matière de qualité et de sécurité.",
+        title: titres[0],
+      },
+      {
+        image: images[1],
+        text: "Nous offrons des services complets d'architecture, de la conception initiale à la réalisation des plans détaillés. Nos solutions architecturales sont innovantes, esthétiques et respectueuses des contraintes techniques et environnementales.",
+        title: titres[1],
+      },
+      {
+        image: images[2],
+        text: "Nous concevons et fabriquons du mobilier sur mesure, alliant esthétique et fonctionnalité. Nos créations visent à répondre aux besoins spécifiques de chaque espace, en intégrant des matériaux durables et un savoir-faire artisanal.",
+        title: titres[2],
+      },
+      {
+        image: images[3],
+        text: "Nous proposons des services de design d'intérieur sur mesure, en transformant vos espaces pour refléter votre style et vos besoins. Nous optimisons l'agencement, les matériaux et les couleurs pour créer des environnements à la fois fonctionnels et élégants.",
+        title: titres[3],
+      },
+      {
+        image: images[4],
+        text: "Notre service d'installation de panneaux solaires vous offre une solution durable pour produire votre propre énergie. Nous gérons tout le processus, de l'évaluation à l'installation, en garantissant un rendement optimal. Profitez d'économies sur vos factures d'énergie tout en contribuant à un avenir plus vert. Faites le choix de l'énergie solaire dès aujourd'hui !",
+        title: titres[4],
+      },
+      {
+        image: images[5],
+        text: "Nous construisons des maisons écologiques autonomes, combinant confort moderne et respect de l'environnement. Utilisant des matériaux durables et des technologies innovantes, nos maisons sont conçues pour maximiser l'efficacité énergétique. Profitez d'un habitat autosuffisant en énergie qui préserve notre planète.",
+        title: titres[5],
+      },
+      {
+        image: images[6],
+        text: "Notre service de construction de forage garantit un accès fiable à l'eau potable pour vos besoins résidentiels ou agricoles. Nous utilisons des techniques modernes pour créer des forages adaptés et durables. Notre équipe s'assure d'une installation rapide et sécurisée, vous offrant ainsi une source d'eau saine et pérenne, essentielle pour votre quotidien.",
+        title: titres[6],
+      }
+    ])
+  }, [])
   const [services, setServices] = useState([
     {
       image: images[0],
@@ -95,44 +134,6 @@ function App() {
       title: titres[6],
     }
   ]);
-
-  setServices([
-    {
-      image: images[0],
-      text: "Nous réalisons des projets de construction de bâtiments, allant des structures résidentielles aux complexes commerciaux. De la fondation à la finition, nous garantissons des constructions solides et conformes aux normes les plus élevées en matière de qualité et de sécurité.",
-      title: titres[0],
-    },
-    {
-      image: images[1],
-      text: "Nous offrons des services complets d'architecture, de la conception initiale à la réalisation des plans détaillés. Nos solutions architecturales sont innovantes, esthétiques et respectueuses des contraintes techniques et environnementales.",
-      title: titres[1],
-    },
-    {
-      image: images[2],
-      text: "Nous concevons et fabriquons du mobilier sur mesure, alliant esthétique et fonctionnalité. Nos créations visent à répondre aux besoins spécifiques de chaque espace, en intégrant des matériaux durables et un savoir-faire artisanal.",
-      title: titres[2],
-    },
-    {
-      image: images[3],
-      text: "Nous proposons des services de design d'intérieur sur mesure, en transformant vos espaces pour refléter votre style et vos besoins. Nous optimisons l'agencement, les matériaux et les couleurs pour créer des environnements à la fois fonctionnels et élégants.",
-      title: titres[3],
-    },
-    {
-      image: images[4],
-      text: "Notre service d'installation de panneaux solaires vous offre une solution durable pour produire votre propre énergie. Nous gérons tout le processus, de l'évaluation à l'installation, en garantissant un rendement optimal. Profitez d'économies sur vos factures d'énergie tout en contribuant à un avenir plus vert. Faites le choix de l'énergie solaire dès aujourd'hui !",
-      title: titres[4],
-    },
-    {
-      image: images[5],
-      text: "Nous construisons des maisons écologiques autonomes, combinant confort moderne et respect de l'environnement. Utilisant des matériaux durables et des technologies innovantes, nos maisons sont conçues pour maximiser l'efficacité énergétique. Profitez d'un habitat autosuffisant en énergie qui préserve notre planète.",
-      title: titres[5],
-    },
-    {
-      image: images[6],
-      text: "Notre service de construction de forage garantit un accès fiable à l'eau potable pour vos besoins résidentiels ou agricoles. Nous utilisons des techniques modernes pour créer des forages adaptés et durables. Notre équipe s'assure d'une installation rapide et sécurisée, vous offrant ainsi une source d'eau saine et pérenne, essentielle pour votre quotidien.",
-      title: titres[6],
-    }
-  ])
 
   useEffect(() => {
     let a;
@@ -223,10 +224,10 @@ function App() {
             </div>
 
             <div className='pt-4 w-full min-h-16 pb-3 h-auto text-lg bg-primary flex justify-center items-center md:flex-row flex-col md:gap-14 gap-5 flex-wrap'>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('Templates/facebook (1).png')" }}></span><p className='text-black'>@freelion</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('Templates/whatsapp (2).png')" }}></span><p className='text-black'>(+237) 676 18 72 61</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('Templates/instagram (1).png')" }}></span><p className='text-black'>@twin-lion-ent</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('Templates/gmail1.png')" }}></span><p className='text-black'>contact@twin_lion.com</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('public/facebook (1).png')" }}></span><p className='text-black'>@freelion</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('public/whatsapp (2).png')" }}></span><p className='text-black'>(+237) 676 18 72 61</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('public/instagram (1).png')" }}></span><p className='text-black'>@twin-lion-ent</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('public/gmail1.png')" }}></span><p className='text-black'>contact@twin_lion.com</p></div>
             </div>
           </div>
         </div>
@@ -249,9 +250,9 @@ function App() {
 
           <div className="flex justify-center">
             <div className='p-6 bg-primary flex flex-col gap-5 w-full max-w-5xl'>
-              <ProjetCard img={"Templates/old.img_1.jpg"} title={"Construction d'une villa R+1 avec piscine et terrain de basket – Nsimalen, Cameroun"} text={"Ce projet à Nsimalen comprend une villa R+1 avec 6 chambres, 2 salons spacieux et une cuisine moderne. En plus des espaces de vie confortables, nous avons intégré une piscine privée et un terrain de basket pour les loisirs. Ce projet allie fonctionnalité, confort et élégance, répondant aux attentes élevées du client en termes de qualité et d'aménagement."}></ProjetCard>
-              <ProjetCard img={"Templates/1npsp.png"} title={"ShowRoom, Mercedes"} text={"Nous avons conçu une showroom moderne pour Mercedes, offrant un espace d’exposition élégant et fonctionnel. Le bâtiment met en valeur les véhicules de la marque grâce à une architecture épurée et des espaces optimisés. Le projet intègre des zones dédiées aux clients, avec un agencement raffiné, répondant aux standards internationaux de la marque en matière de qualité et d’esthétique."}></ProjetCard>
-              <ProjetCard img={"Templates/img_2.jpg"} title={"Villa R+1 avec 4 chambres et garage – Yaoundé, Cameroun"} text={"Ce projet résidentiel R+1 à Yaoundé comprend 4 chambres spacieuses, un garage privé et une terrasse exploitable, idéale pour les activités extérieures. Nous avons conçu cet espace pour allier confort et praticité, avec des finitions modernes et des agencements optimisés. La terrasse offre une vue dégagée et peut être utilisée pour diverses activités, ajoutant une valeur supplémentaire à la propriété."}></ProjetCard>
+              <ProjetCard img={"public/old.img_1.jpg"} title={"Construction d'une villa R+1 avec piscine et terrain de basket – Nsimalen, Cameroun"} text={"Ce projet à Nsimalen comprend une villa R+1 avec 6 chambres, 2 salons spacieux et une cuisine moderne. En plus des espaces de vie confortables, nous avons intégré une piscine privée et un terrain de basket pour les loisirs. Ce projet allie fonctionnalité, confort et élégance, répondant aux attentes élevées du client en termes de qualité et d'aménagement."}></ProjetCard>
+              <ProjetCard img={"public/1npsp.png"} title={"ShowRoom, Mercedes"} text={"Nous avons conçu une showroom moderne pour Mercedes, offrant un espace d’exposition élégant et fonctionnel. Le bâtiment met en valeur les véhicules de la marque grâce à une architecture épurée et des espaces optimisés. Le projet intègre des zones dédiées aux clients, avec un agencement raffiné, répondant aux standards internationaux de la marque en matière de qualité et d’esthétique."}></ProjetCard>
+              <ProjetCard img={"public/img_2.jpg"} title={"Villa R+1 avec 4 chambres et garage – Yaoundé, Cameroun"} text={"Ce projet résidentiel R+1 à Yaoundé comprend 4 chambres spacieuses, un garage privé et une terrasse exploitable, idéale pour les activités extérieures. Nous avons conçu cet espace pour allier confort et praticité, avec des finitions modernes et des agencements optimisés. La terrasse offre une vue dégagée et peut être utilisée pour diverses activités, ajoutant une valeur supplémentaire à la propriété."}></ProjetCard>
             </div>
           </div>
         </section >
@@ -263,9 +264,9 @@ function App() {
 
           <div className="flex justify-center" >
             <div className='py-6 bg-primary flex justify-center gap-7 w-full max-w-5xl flex-wrap'>
-              <TemoignageCard text={"J'ai fait appel à cette entreprise pour la construction d'un meublé à Bastos, Cameroun, et j'ai été impressionné par leur rapidité d'exécution. Non seulement le projet a été livré dans les délais, mais la qualité du travail était également irréprochable. Leur équipe a fait preuve de professionnalisme tout au long du processus. Je recommande vivement leurs services pour leur efficacité et leur sérieux."} image={"Templates/imgdub2.png"}></TemoignageCard>
-              <TemoignageCard text={"Résidant à Dubaï, j'ai fait appel à cette entreprise lors de mon retour au Cameroun pour la construction d'un immeuble R+2 à usage locatif avec terrasse d'exploitation. Leur équipe a fait preuve d'un grand professionnalisme et d'une écoute attentive. Le projet a été mené avec rigueur et le résultat est au-delà de mes attentes. Je recommande vivement leurs services pour leur qualité et leur efficacité."} image={"Templates/old.img_7.jpg"}></TemoignageCard>
-              <TemoignageCard text={"Après un projet mal réalisé par un autre prestataire pour mon R+1 à usage d'habitation avec terrasse, j'ai sollicité cette entreprise. Leur professionnalisme et leur maîtrise m'ont impressionné. Ils ont repris le projet avec soin et le résultat dépasse largement mes attentes. La qualité du travail est remarquable, tant sur le plan technique qu'esthétique."} image={"Templates/img 10.png"}></TemoignageCard>
+              <TemoignageCard text={"J'ai fait appel à cette entreprise pour la construction d'un meublé à Bastos, Cameroun, et j'ai été impressionné par leur rapidité d'exécution. Non seulement le projet a été livré dans les délais, mais la qualité du travail était également irréprochable. Leur équipe a fait preuve de professionnalisme tout au long du processus. Je recommande vivement leurs services pour leur efficacité et leur sérieux."} image={"public/imgdub2.png"}></TemoignageCard>
+              <TemoignageCard text={"Résidant à Dubaï, j'ai fait appel à cette entreprise lors de mon retour au Cameroun pour la construction d'un immeuble R+2 à usage locatif avec terrasse d'exploitation. Leur équipe a fait preuve d'un grand professionnalisme et d'une écoute attentive. Le projet a été mené avec rigueur et le résultat est au-delà de mes attentes. Je recommande vivement leurs services pour leur qualité et leur efficacité."} image={"public/old.img_7.jpg"}></TemoignageCard>
+              <TemoignageCard text={"Après un projet mal réalisé par un autre prestataire pour mon R+1 à usage d'habitation avec terrasse, j'ai sollicité cette entreprise. Leur professionnalisme et leur maîtrise m'ont impressionné. Ils ont repris le projet avec soin et le résultat dépasse largement mes attentes. La qualité du travail est remarquable, tant sur le plan technique qu'esthétique."} image={"public/img 10.png"}></TemoignageCard>
             </div>
           </div>
         </section>
