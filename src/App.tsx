@@ -52,12 +52,12 @@ function App() {
 
   let [translateX, setTranslateX] = useState(0);
   let [menuOpen, setMenuOpen] = useState(false);
-  const [images, setImages] = useState(["./public/img_7.jpg", "./public/img_2.jpg", "./public/img_4.jpg", "./public/img_3.jpg", "./public/solaire.jpeg", "./public/maison-ecologique.jpg", "./public/forage.jpg"]);
+  const [images, setImages] = useState(["./img_7.jpg", "./img_2.jpg", "./img_4.jpg", "./img_3.jpg", "./solaire.jpeg", "./maison-ecologique.jpg", "./forage.jpg"]);
 
   const [titres, setTitres] = useState(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"]);
 
   useEffect(() => {
-    setImages(["./public/img_7.jpg", "./public/img_2.jpg", "./public/img_4.jpg", "./public/img_3.jpg", "./public/solaire.jpeg", "./public/maison-ecologique.jpg", "./public/forage.jpg"])
+    setImages(["./img_7.jpg", "./img_2.jpg", "./img_4.jpg", "./img_3.jpg", "./solaire.jpeg", "./maison-ecologique.jpg", "./forage.jpg"])
     setTitres(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"])
     setServices([
       {
@@ -185,7 +185,7 @@ function App() {
                       <div className='md:w-96 w-3/4'>
                         <div className="name text-2xl font-bold text-black px-4 mb-12">TWIN LIONS Entreprise</div>
                         <div className="desc text-xl text-black md:px-4 px-0">
-                          Nous sommes une entreprise spécialisée dans le génie civil et l'architecture. Nous concevons et réalisons des infrastructures durables, telles que des bâtiments, des routes, des ponts et autres ouvrages publics ou privés. Nos services englobent la planification, la conception, l'ingénierie structurelle, ainsi que la supervision et l'exécution des travaux de construction
+                          Nous sommes une entreprise spécialisée dans le génie civil et l'architecture. Nous concevons et réalisons des infrastructures durables, telles que des bâtiments, des routes, des ponts et autres ouvrages  ou privés. Nos services englobent la planification, la conception, l'ingénierie structurelle, ainsi que la supervision et l'exécution des travaux de construction
                         </div>
                       </div>
                     </div>
@@ -224,10 +224,10 @@ function App() {
             </div>
 
             <div className='pt-4 w-full min-h-16 pb-3 h-auto text-lg bg-primary flex justify-center items-center md:flex-row flex-col md:gap-14 gap-5 flex-wrap'>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./public/facebook (1).png')" }}></span><p className='text-black'>@freelion</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./public/whatsapp (2).png')" }}></span><p className='text-black'>(+237) 676 18 72 61</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./public/instagram (1).png')" }}></span><p className='text-black'>@twin-lion-ent</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./public/gmail1.png')" }}></span><p className='text-black'>contact@twin_lion.com</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./facebook (1).png')" }}></span><p className='text-black'>@freelion</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./whatsapp (2).png')" }}></span><p className='text-black'>(+237) 676 18 72 61</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./instagram (1).png')" }}></span><p className='text-black'>@twin-lion-ent</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./gmail1.png')" }}></span><p className='text-black'>contact@twin_lion.com</p></div>
             </div>
           </div>
         </div>
@@ -250,9 +250,9 @@ function App() {
 
           <div className="flex justify-center">
             <div className='p-6 bg-primary flex flex-col gap-5 w-full max-w-5xl'>
-              <ProjetCard img={"./public/old.img_1.jpg"} title={"Construction d'une villa R+1 avec piscine et terrain de basket – Nsimalen, Cameroun"} text={"Ce projet à Nsimalen comprend une villa R+1 avec 6 chambres, 2 salons spacieux et une cuisine moderne. En plus des espaces de vie confortables, nous avons intégré une piscine privée et un terrain de basket pour les loisirs. Ce projet allie fonctionnalité, confort et élégance, répondant aux attentes élevées du client en termes de qualité et d'aménagement."}></ProjetCard>
-              <ProjetCard img={"./public/1npsp.png"} title={"ShowRoom, Mercedes"} text={"Nous avons conçu une showroom moderne pour Mercedes, offrant un espace d’exposition élégant et fonctionnel. Le bâtiment met en valeur les véhicules de la marque grâce à une architecture épurée et des espaces optimisés. Le projet intègre des zones dédiées aux clients, avec un agencement raffiné, répondant aux standards internationaux de la marque en matière de qualité et d’esthétique."}></ProjetCard>
-              <ProjetCard img={"./public/img_2.jpg"} title={"Villa R+1 avec 4 chambres et garage – Yaoundé, Cameroun"} text={"Ce projet résidentiel R+1 à Yaoundé comprend 4 chambres spacieuses, un garage privé et une terrasse exploitable, idéale pour les activités extérieures. Nous avons conçu cet espace pour allier confort et praticité, avec des finitions modernes et des agencements optimisés. La terrasse offre une vue dégagée et peut être utilisée pour diverses activités, ajoutant une valeur supplémentaire à la propriété."}></ProjetCard>
+              <ProjetCard img={"./old.img_1.jpg"} title={"Construction d'une villa R+1 avec piscine et terrain de basket – Nsimalen, Cameroun"} text={"Ce projet à Nsimalen comprend une villa R+1 avec 6 chambres, 2 salons spacieux et une cuisine moderne. En plus des espaces de vie confortables, nous avons intégré une piscine privée et un terrain de basket pour les loisirs. Ce projet allie fonctionnalité, confort et élégance, répondant aux attentes élevées du client en termes de qualité et d'aménagement."}></ProjetCard>
+              <ProjetCard img={"./1npsp.png"} title={"ShowRoom, Mercedes"} text={"Nous avons conçu une showroom moderne pour Mercedes, offrant un espace d’exposition élégant et fonctionnel. Le bâtiment met en valeur les véhicules de la marque grâce à une architecture épurée et des espaces optimisés. Le projet intègre des zones dédiées aux clients, avec un agencement raffiné, répondant aux standards internationaux de la marque en matière de qualité et d’esthétique."}></ProjetCard>
+              <ProjetCard img={"./img_2.jpg"} title={"Villa R+1 avec 4 chambres et garage – Yaoundé, Cameroun"} text={"Ce projet résidentiel R+1 à Yaoundé comprend 4 chambres spacieuses, un garage privé et une terrasse exploitable, idéale pour les activités extérieures. Nous avons conçu cet espace pour allier confort et praticité, avec des finitions modernes et des agencements optimisés. La terrasse offre une vue dégagée et peut être utilisée pour diverses activités, ajoutant une valeur supplémentaire à la propriété."}></ProjetCard>
             </div>
           </div>
         </section >
@@ -264,9 +264,9 @@ function App() {
 
           <div className="flex justify-center" >
             <div className='py-6 bg-primary flex justify-center gap-7 w-full max-w-5xl flex-wrap'>
-              <TemoignageCard text={"J'ai fait appel à cette entreprise pour la construction d'un meublé à Bastos, Cameroun, et j'ai été impressionné par leur rapidité d'exécution. Non seulement le projet a été livré dans les délais, mais la qualité du travail était également irréprochable. Leur équipe a fait preuve de professionnalisme tout au long du processus. Je recommande vivement leurs services pour leur efficacité et leur sérieux."} image={"./public/imgdub2.png"}></TemoignageCard>
-              <TemoignageCard text={"Résidant à Dubaï, j'ai fait appel à cette entreprise lors de mon retour au Cameroun pour la construction d'un immeuble R+2 à usage locatif avec terrasse d'exploitation. Leur équipe a fait preuve d'un grand professionnalisme et d'une écoute attentive. Le projet a été mené avec rigueur et le résultat est au-delà de mes attentes. Je recommande vivement leurs services pour leur qualité et leur efficacité."} image={"./public/old.img_7.jpg"}></TemoignageCard>
-              <TemoignageCard text={"Après un projet mal réalisé par un autre prestataire pour mon R+1 à usage d'habitation avec terrasse, j'ai sollicité cette entreprise. Leur professionnalisme et leur maîtrise m'ont impressionné. Ils ont repris le projet avec soin et le résultat dépasse largement mes attentes. La qualité du travail est remarquable, tant sur le plan technique qu'esthétique."} image={"./public/img 10.png"}></TemoignageCard>
+              <TemoignageCard text={"J'ai fait appel à cette entreprise pour la construction d'un meublé à Bastos, Cameroun, et j'ai été impressionné par leur rapidité d'exécution. Non seulement le projet a été livré dans les délais, mais la qualité du travail était également irréprochable. Leur équipe a fait preuve de professionnalisme tout au long du processus. Je recommande vivement leurs services pour leur efficacité et leur sérieux."} image={"./imgdub2.png"}></TemoignageCard>
+              <TemoignageCard text={"Résidant à Dubaï, j'ai fait appel à cette entreprise lors de mon retour au Cameroun pour la construction d'un immeuble R+2 à usage locatif avec terrasse d'exploitation. Leur équipe a fait preuve d'un grand professionnalisme et d'une écoute attentive. Le projet a été mené avec rigueur et le résultat est au-delà de mes attentes. Je recommande vivement leurs services pour leur qualité et leur efficacité."} image={"./old.img_7.jpg"}></TemoignageCard>
+              <TemoignageCard text={"Après un projet mal réalisé par un autre prestataire pour mon R+1 à usage d'habitation avec terrasse, j'ai sollicité cette entreprise. Leur professionnalisme et leur maîtrise m'ont impressionné. Ils ont repris le projet avec soin et le résultat dépasse largement mes attentes. La qualité du travail est remarquable, tant sur le plan technique qu'esthétique."} image={"./img 10.png"}></TemoignageCard>
             </div>
           </div>
         </section>
