@@ -19,11 +19,6 @@ function ProjetCard({ text, img, title }: any) {
 
 
 function TemoignageCard({ text, image }: any) {
-  let [ishover, sethover] = useState(false);
-
-  useEffect(() => {
-    // console.log(ishover)
-  })
 
   return (
     <>
@@ -49,11 +44,12 @@ function ServiceCard({ text, image, title }: any) {
 
 function App() {
 
-  let [choosenImage, setChoosenImage] = useState(0);
   let [translateX, setTranslateX] = useState(0);
   let [menuOpen, setMenuOpen] = useState(false);
-  const [images, setImages] = useState(["Templates/img_7.jpg", "Templates/img_2.jpg", "Templates/img_4.jpg", "Templates/img_3.jpg", "Templates/solaire.jpeg", "Templates/maison-ecologique.jpg", "Templates/forage.jpg"]);
+  const [images, setImages] = useState();
+  setImages(images)
   const [titres, setTitres] = useState(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"]);
+  setTitres(titres)
   const [services, setServices] = useState([
     {
       image: images[0],
@@ -91,6 +87,7 @@ function App() {
       title: titres[6],
     }
   ]);
+  setServices(services)
 
   useEffect(() => {
     let a;
