@@ -152,7 +152,7 @@ function App() {
 
       <div className='scroll-smooth'>
         <nav className='fixed z-50 flex justify-between items-center -top-3  pl-4 w-full min-h-16 h-auto bg-gray-200 shadow-md py-3 shadow-black flex-wrap'>
-          <div className="icon text-2xl px-10 rounded-md py-3 mt-3 bg-black animate-loading-parent bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('Logo.jpg')" }}><div className='animate'></div><div className='h-6'></div></div>
+          <div className="icon text-2xl px-10 rounded-md py-3 mt-3 bg-black animate-loading-parent bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('./Logo.jpg')" }}><div className='animate'></div><div className='h-6'></div></div>
 
           <ul className={'md:flex md:justify-md:between md:gap-4 md:mr-6 ' + String(menuOpen && "flex z-50 fixed top-0 left-0 w-screen h-screen bg-black justify-center items-center gap-5 flex-col" || !menuOpen && "hidden")}>
             <li className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)} href="#">Home</a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
