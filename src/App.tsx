@@ -46,10 +46,12 @@ function App() {
 
   let [translateX, setTranslateX] = useState(0);
   let [menuOpen, setMenuOpen] = useState(false);
-  const [images, setImages] = useState();
-  setImages(images)
+  const [images, setImages] = useState(["Templates/img_7.jpg", "Templates/img_2.jpg", "Templates/img_4.jpg", "Templates/img_3.jpg", "Templates/solaire.jpeg", "Templates/maison-ecologique.jpg", "Templates/forage.jpg"]);
+  setImages(["Templates/img_7.jpg", "Templates/img_2.jpg", "Templates/img_4.jpg", "Templates/img_3.jpg", "Templates/solaire.jpeg", "Templates/maison-ecologique.jpg", "Templates/forage.jpg"])
+
   const [titres, setTitres] = useState(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"]);
-  setTitres(titres)
+  setTitres(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"])
+
   const [services, setServices] = useState([
     {
       image: images[0],
@@ -87,7 +89,44 @@ function App() {
       title: titres[6],
     }
   ]);
-  setServices(services)
+
+  setServices([
+    {
+      image: images[0],
+      text: "Nous réalisons des projets de construction de bâtiments, allant des structures résidentielles aux complexes commerciaux. De la fondation à la finition, nous garantissons des constructions solides et conformes aux normes les plus élevées en matière de qualité et de sécurité.",
+      title: titres[0],
+    },
+    {
+      image: images[1],
+      text: "Nous offrons des services complets d'architecture, de la conception initiale à la réalisation des plans détaillés. Nos solutions architecturales sont innovantes, esthétiques et respectueuses des contraintes techniques et environnementales.",
+      title: titres[1],
+    },
+    {
+      image: images[2],
+      text: "Nous concevons et fabriquons du mobilier sur mesure, alliant esthétique et fonctionnalité. Nos créations visent à répondre aux besoins spécifiques de chaque espace, en intégrant des matériaux durables et un savoir-faire artisanal.",
+      title: titres[2],
+    },
+    {
+      image: images[3],
+      text: "Nous proposons des services de design d'intérieur sur mesure, en transformant vos espaces pour refléter votre style et vos besoins. Nous optimisons l'agencement, les matériaux et les couleurs pour créer des environnements à la fois fonctionnels et élégants.",
+      title: titres[3],
+    },
+    {
+      image: images[4],
+      text: "Notre service d'installation de panneaux solaires vous offre une solution durable pour produire votre propre énergie. Nous gérons tout le processus, de l'évaluation à l'installation, en garantissant un rendement optimal. Profitez d'économies sur vos factures d'énergie tout en contribuant à un avenir plus vert. Faites le choix de l'énergie solaire dès aujourd'hui !",
+      title: titres[4],
+    },
+    {
+      image: images[5],
+      text: "Nous construisons des maisons écologiques autonomes, combinant confort moderne et respect de l'environnement. Utilisant des matériaux durables et des technologies innovantes, nos maisons sont conçues pour maximiser l'efficacité énergétique. Profitez d'un habitat autosuffisant en énergie qui préserve notre planète.",
+      title: titres[5],
+    },
+    {
+      image: images[6],
+      text: "Notre service de construction de forage garantit un accès fiable à l'eau potable pour vos besoins résidentiels ou agricoles. Nous utilisons des techniques modernes pour créer des forages adaptés et durables. Notre équipe s'assure d'une installation rapide et sécurisée, vous offrant ainsi une source d'eau saine et pérenne, essentielle pour votre quotidien.",
+      title: titres[6],
+    }
+  ])
 
   useEffect(() => {
     let a;
