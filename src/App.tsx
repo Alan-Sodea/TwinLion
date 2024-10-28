@@ -144,7 +144,7 @@ function App() {
       if (b == -100 * (images.length)) b = 0;
       await setTranslateX(b);
 
-    }, 3000);
+    }, 4500);
   })
 
   return (
