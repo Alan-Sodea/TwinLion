@@ -164,7 +164,7 @@ function App() {
         </nav>
 
 
-        <div className='fixed top-0 h-16 flex flex-col justify-center items-center aspect-square z-50 right-4 md:hidden'>
+        <div className='fixed top-10 h-16 flex flex-col justify-center items-center aspect-square z-50 right-4 md:hidden'>
           <div className={'flex flex-col h-8 aspect-square ' + String(menuOpen && "justify-center gap-0" || !menuOpen && "gap-2 justify-between")} onClick={() => { setMenuOpen(!menuOpen); }}>
             <div className={'w-full h-2 ' + String(menuOpen && "rotate-45 relative top-1 bg-white" || !menuOpen && "bg-black")} ></div>
             <div className={'w-full h-2 ' + String(menuOpen && "rotate-45 hidden bg-white" || !menuOpen && "bg-black")} ></div>
