@@ -166,7 +166,7 @@ section
   /* transform: scale(2); */
 }
 
-@media only screen and (max-width:720px){.service{width: 100%;}*{font-family : Algerian}}
+@media only screen and (max-width:720px){.service{width: 100%;}*{font-family : Tahoma}}
 @media only screen and (max-width: 1080px) and (min-width: 720px) {.service{width: 48%;}}
 
 
