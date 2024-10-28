@@ -164,7 +164,7 @@ function App() {
         </nav>
 
 
-        <div className='fixed top-10 h-16 flex flex-col justify-center items-center aspect-square z-50 right-4 md:hidden'>
+        <div className='fixed top-0 h-16 flex flex-col justify-center items-center aspect-square z-50 right-4 md:hidden'>
           <div className={'flex flex-col h-8 aspect-square ' + String(menuOpen && "justify-center gap-0" || !menuOpen && "gap-2 justify-between")} onClick={() => { setMenuOpen(!menuOpen); }}>
             <div className={'w-full h-2 ' + String(menuOpen && "rotate-45 relative top-1 bg-white" || !menuOpen && "bg-black")} ></div>
             <div className={'w-full h-2 ' + String(menuOpen && "rotate-45 hidden bg-white" || !menuOpen && "bg-black")} ></div>
@@ -172,7 +172,7 @@ function App() {
           </div>
         </div >
 
-        <div className='overflow-hidden mt-5'>
+        <div className='overflow-hidden top-bar mt-5'>
           <div className='relative h-fit w-2/3 outline outline-blue-200 outline-5 flex flex-col justify-between w-screen pt-10 pb-0 gap-12'>
             <div className='w-full'>
               <div className='h-full w-full bg-primary flex items-center justify-center gap-20 overflow-x-visible'>
