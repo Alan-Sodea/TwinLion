@@ -225,9 +225,9 @@ function App() {
 
             <div className='pt-4 w-full min-h-16 pb-3 h-auto text-lg bg-primary flex justify-center items-center md:flex-row flex-col md:gap-14 gap-5 flex-wrap'>
               <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./facebook (1).png')" }}></span><p className='text-black'>@twin-lions</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./whatsapp (2).png')" }}></span><p className='text-black'>(+237) 676 18 72 61</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./whatsapp (2).png')" }}></span><p className='text-black'>(+237) 697 55 37 23</p></div>
               <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./instagram (1).png')" }}></span><p className='text-black'>@twin-lion-ent</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./gmail1.png')" }}></span><p className='text-black'>contact@twin_lion.com</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./gmail1.png')" }}></span><p className='text-black'>twinlions@twin-lions.com</p></div>
             </div>
           </div>
         </div>
