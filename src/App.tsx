@@ -227,7 +227,7 @@ function App() {
               <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./facebook (1).png')" }}></span><p className='text-black'>@twin-lions</p></div>
               <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./whatsapp (2).png')" }}></span><p className='text-black'>(+237) 697 55 37 23</p></div>
               <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./instagram (1).png')" }}></span><p className='text-black'>@twin-lion-ent</p></div>
-              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./gmail1.png')" }}></span><p className='text-black'>twinlions@twin-lions.com</p></div>
+              <div className='flex gap-2 items-center'><span className='w-8 aspect-square bg-center bg-cover' style={{ backgroundImage: "url('./gmail1.png')" }}></span><p className='text-black'>twinlion@twin-lions.com</p></div>
             </div>
           </div>
         </div>
