@@ -54,11 +54,11 @@ function App() {
   let [menuOpen, setMenuOpen] = useState(false);
   const [images, setImages] = useState(["./img_7.jpg", "./img_2.jpg", "./img_4.jpg", "./img_3.jpg", "./solaire.jpeg", "./maison-ecologique.jpg", "./forage.jpg"]);
 
-  const [titres, setTitres] = useState(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"]);
+  const [titres, setTitres] = useState(["Constructions de bâtiments", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contructions de forages"]);
 
   useEffect(() => {
     setImages(["./img_7.jpg", "./img_2.jpg", "./img_4.jpg", "./img_3.jpg", "./solaire.jpeg", "./maison-ecologique.jpg", "./forage.jpg"])
-    setTitres(["Construction de batiment", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contruction de forage"])
+    setTitres(["Constructions de bâtiments", "Conceptions architecturales", "Design de mobilier", "Design d'intérieur", "Installation de panneaux solaire", "Maisons écologiques et autonomes", "Contructions de forages"])
     setServices([
       {
         image: images[0],
@@ -77,12 +77,12 @@ function App() {
       },
       {
         image: images[3],
-        text: "Nous proposons des services de design d'intérieur sur mesure, en transformant vos espaces pour refléter votre style et vos besoins. Nous optimisons l'agencement, les matériaux et les couleurs pour créer des environnements à la fois fonctionnels et élégants.",
+        text: "Nous proposons des services de design d'intérieur sur mesure, en transformant vos espaces pour refléter votre style et vos besoins. Nous optimisons l'agencement, les matériaux et les couleurs pour créer des environnements à la fois fonctionnel et élégant.",
         title: titres[3],
       },
       {
         image: images[4],
-        text: "Notre service d'installation de panneaux solaires vous offre une solution durable pour produire votre propre énergie. Nous gérons tout le processus, de l'évaluation à l'installation, en garantissant un rendement optimal. Profitez d'économies sur vos factures d'énergie tout en contribuant à un avenir plus vert. Faites le choix de l'énergie solaire dès aujourd'hui !",
+        text: "Notre service d'installation de panneaux solaires vous offre une solution durable pour produire votre propre énergie. Nous gérons tout le processus, de l'évaluation à l'installation, en garantissant un rendement optimal. Profiter de l'économie faite sur vos factures d'énergie tout en contribuant à un avenir plus vert. Faites le choix de l'énergie solaire dès aujourd'hui !",
         title: titres[4],
       },
       {
@@ -92,7 +92,7 @@ function App() {
       },
       {
         image: images[6],
-        text: "Notre service de construction de forage garantit un accès fiable à l'eau potable pour vos besoins résidentiels ou agricoles. Nous utilisons des techniques modernes pour créer des forages adaptés et durables. Notre équipe s'assure d'une installation rapide et sécurisée, vous offrant ainsi une source d'eau saine et pérenne, essentielle pour votre quotidien.",
+        text: "Notre service de construction de forages garantit un accès fiable à l'eau potable pour vos besoins résidentiels ou agricoles. Nous utilisons des techniques modernes pour créer des forages adaptés et durables. Notre équipe s'assure d'une installation rapide et sécurisée, vous offrant ainsi une source d'eau saine et pérenne, essentielle pour votre quotidien.",
         title: titres[6],
       }
     ])
@@ -115,12 +115,12 @@ function App() {
     },
     {
       image: images[3],
-      text: "Nous proposons des services de design d'intérieur sur mesure, en transformant vos espaces pour refléter votre style et vos besoins. Nous optimisons l'agencement, les matériaux et les couleurs pour créer des environnements à la fois fonctionnels et élégants.",
+      text: "Nous proposons des services de design d'intérieur sur mesure, en transformant vos espaces pour refléter votre style et vos besoins. Nous optimisons l'agencement, les matériaux et les couleurs pour créer des environnements à la fois fonctionnel et élégant.",
       title: titres[3],
     },
     {
       image: images[4],
-      text: "Notre service d'installation de panneaux solaires vous offre une solution durable pour produire votre propre énergie. Nous gérons tout le processus, de l'évaluation à l'installation, en garantissant un rendement optimal. Profitez d'économies sur vos factures d'énergie tout en contribuant à un avenir plus vert. Faites le choix de l'énergie solaire dès aujourd'hui !",
+      text: "Notre service d'installation de panneaux solaires vous offre une solution durable pour produire votre propre énergie. Nous gérons tout le processus, de l'évaluation à l'installation, en garantissant un rendement optimal. Profiter de l'économie faite sur vos factures d'énergie tout en contribuant à un avenir plus vert. Faites le choix de l'énergie solaire dès aujourd'hui !",
       title: titres[4],
     },
     {
@@ -130,7 +130,7 @@ function App() {
     },
     {
       image: images[6],
-      text: "Notre service de construction de forage garantit un accès fiable à l'eau potable pour vos besoins résidentiels ou agricoles. Nous utilisons des techniques modernes pour créer des forages adaptés et durables. Notre équipe s'assure d'une installation rapide et sécurisée, vous offrant ainsi une source d'eau saine et pérenne, essentielle pour votre quotidien.",
+      text: "Notre service de construction de forages garantit un accès fiable à l'eau potable pour vos besoins résidentiels ou agricoles. Nous utilisons des techniques modernes pour créer des forages adaptés et durables. Notre équipe s'assure d'une installation rapide et sécurisée, vous offrant ainsi une source d'eau saine et pérenne, essentielle pour votre quotidien.",
       title: titres[6],
     }
   ]);
