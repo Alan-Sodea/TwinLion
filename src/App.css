@@ -1,0 +1,177 @@
+*
+{
+  padding: 0;
+  margin: 0;
+  font-family: Garamond;
+  color: white;
+  --primary-color: rgb(240, 240, 240);
+  /* --primary-color: rgba(0, 0, 0, 0.877); */
+  /* --nav-color: rgb(0, 0, 0); */
+  /* --primary-color: black; */
+  --accent-color: lightgrey;
+  --action-color : rgb(0, 119, 255);
+  --action-color : rgb(0, 4, 255);
+  --action-color : rgb(0, 4, 255);
+  background: none;
+  background-color: rgb(0, 0, 0, 0);
+  --action-color : #FFD700;
+  transition: all linear 0.15s;
+  scroll-behavior: smooth;
+  /* background-color: white; */
+  /* display: ; */
+}
+
+.bg-primary{background-color: var(--primary-color);}
+.bg-accent{background-color: var(--accent-color);}
+.bg-action{background-color: var(--action-color);}
+.bg-action{background: linear-gradient(to top,#E0A94B, #FFE07D);}
+
+.outline-accent{outline-color: #FFE07D;}
+
+.text-primary{color: var(--primary-color);}
+.text-accent{color: var(--accent-color);} 
+.text-action{color: var(--action-color);}
+
+@keyframes spin5 {
+  from
+  {transform: rotate(0deg) scale(0.9);}
+  to {transform: rotate(360deg) scale(0.9);}
+}
+.animate-spin-5 {animation: spin5 3s linear infinite;}
+
+
+li a:hover + .back
+{height: 100%;}
+
+@keyframes loading {
+  from {
+    left: calc(100%);
+  }
+  to {
+    left: calc(-100% - 100px);
+  }
+}
+
+body
+{
+  background-color: var(--primary-color);
+}
+
+.slide
+{
+  animation: anim 10s infinite;
+}
+
+@keyframes anim {
+  6%
+  {
+    transform: translate(0)
+  }
+  28%
+  {
+    transform: translate(-100%)
+  }
+  34%
+  {
+    transform: translate(-100%)
+  }
+  53%
+  {
+    transform: translate(-200%)
+  }
+  59%
+  {
+    transform: translate(-200%)
+  }
+  78%
+  {
+    transform: translate(-300%)
+  }
+  84%
+  {
+    transform: translate(-300%)
+  }
+  90%
+  {
+    transform:  translate(0);
+  }
+  
+}
+
+.animate-loading-parent {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-color);
+  background: linear-gradient(to top,#E0A94B, #FFE07D);
+}
+
+.animate-loading
+{
+  top: 30%;
+  width: calc(100% + 100px);
+  height: 2.5rem;
+  position: absolute;
+  transform: rotate(45deg);
+  background: linear-gradient(to top , rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.479) 50%,rgba(255, 255, 255, 0) 100%);
+  transition: all linear 2s;
+  animation: loading 1.5s linear infinite;
+}
+
+section
+{
+  padding-top: 6rem;
+  background-color: var(--primary-color);
+}
+
+.service
+{
+  width: 31.3333%;
+}
+
+.temoignage
+{
+  width: 31.3333%;
+}
+
+.projet
+{
+  flex-direction: row;
+}
+
+.aspect-short
+{
+  aspect-ratio: 3/5;
+}
+
+.temoignage
+{
+  position: relative;
+  width: 30%;
+}
+
+.temoignage .desc
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 0.125rem 0.125rem 0.125rem 0.125rem;
+  padding-top: 30px;
+  color:  white;
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0.1));
+  /* transform: scale(2); */
+}
+
+@media only screen and (max-width:720px){.service{width: 100%;}}
+@media only screen and (max-width: 1080px) and (min-width: 720px) {.service{width: 48%;}}
+
+
+@media only screen and (max-width:516px){.projet{flex-direction: column;}}
+
+@media only screen and (max-width:516px){.temoignage{width: 100%;}}
+@media only screen and (min-width:516px) and (max-width : 816px){.temoignage{width: 47%;}}
+.bg-nav{background-color: var(--nav-color);}
