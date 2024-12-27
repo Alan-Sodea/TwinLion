@@ -4,7 +4,7 @@ import './App.css'
 import { globalStore } from './stores/adminStore';
 import { loadGlobalStore } from './stores/actionStore';
 
-function ProjetCard({ text, img, title }: any) {
+function ProjetCard({ text, img, title }) {
   return (
     <>
       <div className='projet flex outline outline-1 md:flex-row overflow-hidden flex-col gap-3 p-2 w-full shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-sm'>
@@ -21,7 +21,7 @@ function ProjetCard({ text, img, title }: any) {
 }
 
 
-function TemoignageCard({ text, image }: any) {
+function TemoignageCard({ text, image }) {
 
   let [ishover, sethover] = useState(false);
 
@@ -35,7 +35,7 @@ function TemoignageCard({ text, image }: any) {
   );
 }
 
-function ServiceCard({ text, image, title }: any) {
+function ServiceCard({ text, image, title }) {
   return (
     <>
       <div className='service outline-amber-400 outline-2.5 outline flex gap-3 w-full cursor-pointer h-fit flex-col p-2 shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-md'>
