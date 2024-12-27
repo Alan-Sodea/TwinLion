@@ -57,7 +57,7 @@ function App() {
     (async () => {
       await loadGlobalStore();
       setServices(store[0].records)
-
+      console.log(store.get());
     })()
   }, [])
 
