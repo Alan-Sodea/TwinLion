@@ -19,13 +19,12 @@ export const loadGlobalStore = async (filename = 'global-store.json') => {
         if (file instanceof Blob) {
             // Lire le contenu du Blob en texte
             const text = await file.text();
-
+            console.log({text});
             // Analyser le texte comme du JSON
             const loadedStore = JSON.parse(text);
 
             // Mettre à jour le globalStore avec les données téléchargées
             globalStore.set(loadedStore);
-
             // console.log('GlobalStore chargé avec succès :', loadedStore);
             return true;
         } else {
