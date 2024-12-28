@@ -1,6 +1,6 @@
 import { hookstate } from '@hookstate/core';
 
-export const globalStore: any = hookstate([
+export const globalStore = hookstate([
 
 ]);
 
