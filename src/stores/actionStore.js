@@ -9,7 +9,7 @@ export const loadGlobalStore = async (filename = 'global-store.json') => {
         // Télécharger le fichier JSON depuis le bucket 'state'
         const { data: file, error } = await supabase.storage
             .from('state')
-            .download(filename);
+            .download(`${filename}?cache-buster=${Date.now()}`);
 
         if (error) {
             // console.error('Erreur lors du chargement :', error.message);
