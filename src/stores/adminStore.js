@@ -4,6 +4,12 @@ export const globalStore = hookstate([
 
 ]);
 
+export const imageStore = hookstate([
+
+]);
+
+
+
 export const presetLayouts = [
     '/case1.png',
     '/case2.png',

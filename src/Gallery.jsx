@@ -1,50 +1,46 @@
 import { useEffect, useState } from "react";
-import { supabase } from "./lib/supabase";
+import { loadGallery, loadGlobalStore } from "./stores/actionStore";
+import { useHookstate } from "@hookstate/core";
+import { globalStore, imageStore } from "./stores/adminStore";
+import { Link } from "react-router-dom";
 
 function Gallery() {
 
-  const [gallery, setGallery] = useState([{image : "https://blog-fr.orson.io/wp-content/uploads/2022/12/scott.art_A_compelling_photograph_showing_a_collection_of_print_ab712c98-6913-4116-882e-4d9717ccb689.png", desc : "Visite de Chantier à Garoua Boulaï"}])
+  let [menuOpen, setMenuOpen] = useState(false);
+  const store = useHookstate(globalStore);
+
+  const [services, setServices] = useState();
 
   useEffect(() => {
+    loadGallery();
+
     (async () => {
-      try {
-          // console.log('Début du chargement du state...');
-          // Charger le dernier state sauvegardé (par exemple, le plus récent)
-          // Télécharger le fichier JSON depuis le bucket 'state'
-          const { data: file, error } = await supabase.storage
-              .from('state')
-              .download(`${"gallery.json"}?cache-buster=${Date.now()}`);
-  
-          if (error) {
-              // console.error('Erreur lors du chargement :', error.message);
-              return false;
-          }
-  
-          if (file instanceof Blob) {
-              // Lire le contenu du Blob en texte
-              const text = await file.text();
-              console.log({text});
-              // Analyser le texte comme du JSON
-              const loadedStore = JSON.parse(text);
-  
-              // Mettre à jour le globalStore avec les données téléchargées
-              globalStore.set(loadedStore);
-              // console.log('GlobalStore chargé avec succès :', loadedStore);
-              return true;
-          } else {
-              console.error('Le fichier téléchargé n\'est pas un Blob');
-              return false;
-          }
-  
-      } catch (error) {
-          console.error('Erreur :', error);
-          return false;
-      }
+      await loadGlobalStore();
+      setServices(store[0].records)
+      // console.log(store.get());
     })()
-  })
+  }, [])
+
+  let gallery = useHookstate(imageStore)
 
   return <>
-    <div className="min-h-screen bg-[rgb(240,240,240)]">
+    <nav className='fixed z-50 flex justify-between items-center -top-3  pl-4 w-full bg-gray-200 shadow-md py-3 shadow-black flex-wrap'>
+      <div className="icon text-2xl px-10 rounded-md py-3 mt-3 bg-black animate-loading-parent bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('./Logo.jpg')" }}><div className='animate'></div><div className='h-6'></div></div>
+
+      <ul className={'md:flex md:justify-md:between md:gap-4 md:mr-6 ' + String(menuOpen && "flex z-50 fixed top-0 left-0 w-screen h-screen bg-black justify-center items-center gap-5 flex-col" || !menuOpen && "hidden")}>
+        <li className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)} ><Link to="/">Accueil</Link></a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
+        {
+          store.map((section, index) => {
+            return <li key={index} className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)}> <Link to="/">{section.section.get()}</Link></a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
+          })
+        }
+
+        <li className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)} > <Link to="/gallery">Images</Link> </a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
+      </ul>
+
+    </nav>
+
+    ((gallery) && (gallery[0]) && <div className="mt-8 bg-[rgb(240,240,240)]">
       <header className="bg-white shadow-sm py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-gray-900">
@@ -59,16 +55,16 @@ function Gallery() {
       <div className="container outline outline-1 p-0 grid grid-cols-1 mx-auto lg:grid-cols-2 xl:grid-cols-3 gap-8 ">
       { 
         gallery.map((image, index) => (<>
-          <div className="the-card w-full p-0 aspect-square outline outline-1 outline-black rounded-md shadow-lg hover:shadow-2xl scale-95 hover:scale-100">
-            <div className={"img relative z-0 w-full m-0 h-full bg-cover bg-center hover:cursor-pointer"} onClick={() => {setMain(1), pop(true)}} style={{backgroundImage : "url('"+image.image+"')"}}>
+          <div key={index} className="the-card w-full p-0 aspect-square outline outline-1 outline-black rounded-md shadow-lg hover:shadow-2xl scale-95 hover:scale-100">
+            <div className={"img relative z-0 w-full m-0 h-full bg-cover bg-center hover:cursor-pointer"} onClick={() => {setMain(1), pop(true)}} style={{backgroundImage : "url('"+image.image.get()+"')"}}>
             </div>
-            <p className="absolute z-50 bottom-16 left-8 font-bold text-wrap hidden text-lg" style={{width : "calc(100% - 4rem)", maxHeight : "calc(100% - 4rem)"}}>{image.desc}</p>
+            <p className="absolute z-50 bottom-16 left-8 font-bold text-wrap hidden text-lg" style={{width : "calc(100% - 4rem)", maxHeight : "calc(100% - 4rem)"}}>{image.desc.get()}</p>
           </div>
         </>))
       }
       </div>
       
-    </div>
+    </div>)
   </> 
 }
 
