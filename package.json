@@ -12,17 +12,11 @@
   "dependencies": {
     "@hookstate/core": "^4.0.1",
     "@supabase/supabase-js": "^2.47.10",
-<<<<<<< HEAD
     "nodemon": "^3.1.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1"
-=======
 
-    "nodemon": "^3.1.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
->>>>>>> ab5a1519b88bb611c90f2fb56451b0c6002ea95a
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
