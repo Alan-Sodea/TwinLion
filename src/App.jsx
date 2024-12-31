@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useHookstate } from '@hookstate/core';
 import './App.css'
 import { globalStore } from './stores/adminStore';
@@ -92,7 +93,7 @@ function App() {
               })
             }
 
-            <li className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)} href={`/gallery`}> Images</a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
+            <li className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)} > <Link to="/gallery">Images</Link> </a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
           </ul>
 
         </nav>
@@ -187,7 +188,6 @@ function App() {
 
                     if (total%3 == 1)
                     {
-                      console.log({elt : 0})
 
                       if (index2 == 0) {
                         return <>
