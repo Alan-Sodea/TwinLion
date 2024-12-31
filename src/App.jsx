@@ -38,7 +38,11 @@ function TemoignageCard({ text, image }) {
 function ServiceCard({ text, image, title }) {
   return (
     <>
+<<<<<<< HEAD
       <div className='service outline-amber-400 outline-2.5 outline flex gap-3 w-full h-fit flex-col p-2 shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-md'>
+=======
+      <div className='service outline-amber-400 outline-2.5 outline flex gap-3 w-full cursor-pointer h-fit flex-col p-2 shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-md'>
+>>>>>>> ab5a1519b88bb611c90f2fb56451b0c6002ea95a
         <div className='w-full aspect-video bg-center bg-cover rounded-sm' style={{ backgroundImage: `url(${image})` }}></div>
         <div className="text-amber-400 font-bold text-xl text-center" style={{ textShadow: "2px 2px black" }}>{title.toUpperCase()}</div>
         <div className='w-full aspect-auto py-3 pl-2 text-black text-md font-bold'>{text}</div>
@@ -57,10 +61,15 @@ function App() {
     (async () => {
       await loadGlobalStore();
       setServices(store[0].records)
+<<<<<<< HEAD
       // console.log(store.get());
     })()
 
     // console.log({printnow : store[0].records.get()})
+=======
+      console.log(store.get());
+    })()
+>>>>>>> ab5a1519b88bb611c90f2fb56451b0c6002ea95a
   }, [])
 
   const [services, setServices] = useState();
@@ -92,7 +101,10 @@ function App() {
               })
             }
 
+<<<<<<< HEAD
             <li className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)} href={`/gallery`}> Images</a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
+=======
+>>>>>>> ab5a1519b88bb611c90f2fb56451b0c6002ea95a
           </ul>
 
         </nav>
@@ -172,6 +184,7 @@ function App() {
               <p className="title bg-action mx-5 rounded-md p-2 pl-5 text-black text-xl">{section.section.get()}</p>
 
               <div className="flex justify-center" >
+<<<<<<< HEAD
                 <div className='p-6 bg-primary grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-14 w-full xl:max-w-7xl max-w-5xl'>
                   {section.records.map((elt, index2) => {
                     
@@ -219,6 +232,10 @@ function App() {
                     </div> 
 
                   })}
+=======
+                <div className='p-6 bg-primary grid md:grid-cols-2 xl:grid-cols-3 grid-cols-1 gap-14 w-full xl:max-w-7xl max-w-5xl'>
+                  {section.records.map((elt, index2) => <ServiceCard key={index2} title={elt.title.get()} image={elt.image.get()} text={elt.text.get()} ></ServiceCard>)}
+>>>>>>> ab5a1519b88bb611c90f2fb56451b0c6002ea95a
                 </div>
               </div>
             </section>
@@ -228,6 +245,7 @@ function App() {
                 <p className="title bg-action mx-5 rounded-md p-2 pl-5 text-black text-xl">{section.section.get()}</p>
 
                 <div className="flex justify-center">
+<<<<<<< HEAD
                   <div className='pt-6 bg-primary flex flex-col gap-5 w-full max-w-7xl'>
                     {/* {
                       section.records.map((elt, index2) => {
@@ -284,6 +302,11 @@ function App() {
                       section.records.map((elt, index2) => <ProjetCard key={index2} img={elt.image.get()} title={elt.title.get()} text={elt.text.get()} pos={true}/>)
                     
                 
+=======
+                  <div className='p-6 bg-primary flex flex-col gap-5 w-full max-w-5xl'>
+                    {
+                      section.records.map((elt, index2) => <ProjetCard key={index2} img={elt.image.get()} title={elt.title.get()} text={elt.text.get()}></ProjetCard>)
+>>>>>>> ab5a1519b88bb611c90f2fb56451b0c6002ea95a
                     }
                   </div>
                 </div>

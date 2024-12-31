@@ -14,4 +14,7 @@ export const isConnected = hookstate(false);
 export const ThePassword = hookstate("admin123");
 
 export const actualSection = hookstate("");
+<<<<<<< HEAD
 
+=======
+>>>>>>> ab5a1519b88bb611c90f2fb56451b0c6002ea95a
