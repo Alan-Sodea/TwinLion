@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { supabase } from "./lib/supabase";
 
 function Gallery() {
 
@@ -60,7 +60,7 @@ function Gallery() {
       { 
         gallery.map((image, index) => (<>
           <div className="the-card w-full p-0 aspect-square outline outline-1 outline-black rounded-md shadow-lg hover:shadow-2xl scale-95 hover:scale-100">
-            <div className={"img relative z-0 w-full m-0 h-full bg-cover bg-center hover:cursor-pointer"} onclick={() => {setMain(1), pop(true)}} style={{backgroundImage : "url('"+image.image+"')"}}>
+            <div className={"img relative z-0 w-full m-0 h-full bg-cover bg-center hover:cursor-pointer"} onClick={() => {setMain(1), pop(true)}} style={{backgroundImage : "url('"+image.image+"')"}}>
             </div>
             <p className="absolute z-50 bottom-16 left-8 font-bold text-wrap hidden text-lg" style={{width : "calc(100% - 4rem)", maxHeight : "calc(100% - 4rem)"}}>{image.desc}</p>
           </div>
