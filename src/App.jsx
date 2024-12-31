@@ -38,7 +38,7 @@ function TemoignageCard({ text, image }) {
 function ServiceCard({ text, image, title }) {
   return (
     <>
-      <div className='service outline-amber-400 outline-2.5 outline flex gap-3 w-full cursor-pointer h-fit flex-col p-2 shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-md'>
+      <div className='service outline-amber-400 outline-2.5 outline flex gap-3 w-full h-fit flex-col p-2 shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-md'>
         <div className='w-full aspect-video bg-center bg-cover rounded-sm' style={{ backgroundImage: `url(${image})` }}></div>
         <div className="text-amber-400 font-bold text-xl text-center" style={{ textShadow: "2px 2px black" }}>{title.toUpperCase()}</div>
         <div className='w-full aspect-auto py-3 pl-2 text-black text-md font-bold'>{text}</div>
@@ -57,8 +57,10 @@ function App() {
     (async () => {
       await loadGlobalStore();
       setServices(store[0].records)
-      console.log(store.get());
+      // console.log(store.get());
     })()
+
+    // console.log({printnow : store[0].records.get()})
   }, [])
 
   const [services, setServices] = useState();
@@ -90,6 +92,7 @@ function App() {
               })
             }
 
+            <li className='relative p-2'><a className={'relative md:text-black md:text-lg z-30 hover:text-white text-white text-3xl'} onClick={() => setMenuOpen(false)} href={`/gallery`}> Images</a><div className="z-20 absolute top-0 left-0 w-full h-0 bg-action back"></div></li>
           </ul>
 
         </nav>
@@ -169,8 +172,53 @@ function App() {
               <p className="title bg-action mx-5 rounded-md p-2 pl-5 text-black text-xl">{section.section.get()}</p>
 
               <div className="flex justify-center" >
-                <div className='p-6 bg-primary grid md:grid-cols-2 xl:grid-cols-3 grid-cols-1 gap-14 w-full xl:max-w-7xl max-w-5xl'>
-                  {section.records.map((elt, index2) => <ServiceCard key={index2} title={elt.title.get()} image={elt.image.get()} text={elt.text.get()} ></ServiceCard>)}
+                <div className='p-6 bg-primary grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-14 w-full xl:max-w-7xl max-w-5xl'>
+                  {section.records.map((elt, index2) => {
+                    
+                    let md = "col-span-1";
+                    let xl = "col-span-1";
+                    let total = section.records.length; 
+                    let target = 0;
+                    
+                    if (total%2 == 1)
+                    {
+                      if (index2 == target) md = "col-span-2"
+                    }
+
+                    if (total%3 == 1)
+                    {
+                      console.log({elt : 0})
+
+                      if (index2 == 0) {
+                        return <>
+                          <div key={index2} className={`lg:col-span-3 md:col-span-2  outline outline-1`}>
+                            <div className='projet outline-amber-400 outline-3 flex outline md:flex-row overflow-hidden flex-col gap-3 p-2 w-full shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-sm'>
+                              <div className='w-full aspect-video bg-cover rounded-sm bg-center' style={{ backgroundImage: `url('${elt.image.get()}')` }}></div>
+                              <div className='w-full aspect-auto py-3 pl-2 text-black text-sm flex flex-col'>
+                                <div className='text-2xl mb-1 text-amber-400 font-bold text-center' style={{ textShadow: "1.5px 1.5px black" }}>{elt.title.get()}</div>
+                                <div className='text-black h-full flex flex-col justify-center w-full aspect-auto py-3 pl-2 text-lg font-bold'>
+                                  {elt.text.get()}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      } 
+                      else
+                      {
+                       
+                      }
+                    }
+                    else if (total%3 == 2)
+                    {
+                      if (index2 == target) xl = "col-span-2"; 
+                    }
+                    
+                    return <div key={index2} className={`col-span-1`}>
+                      <ServiceCard key={index2} title={elt.title.get()} image={elt.image.get()} text={elt.text.get()} />
+                    </div> 
+
+                  })}
                 </div>
               </div>
             </section>
@@ -180,9 +228,62 @@ function App() {
                 <p className="title bg-action mx-5 rounded-md p-2 pl-5 text-black text-xl">{section.section.get()}</p>
 
                 <div className="flex justify-center">
-                  <div className='p-6 bg-primary flex flex-col gap-5 w-full max-w-5xl'>
+                  <div className='pt-6 bg-primary flex flex-col gap-5 w-full max-w-7xl'>
+                    {/* {
+                      section.records.map((elt, index2) => {
+
+                        return <ProjetCard key={index2} img={elt.image.get()} title={elt.title.get()} text={elt.text.get()}/>
+
+                      })
+                    } */}
+
                     {
-                      section.records.map((elt, index2) => <ProjetCard key={index2} img={elt.image.get()} title={elt.title.get()} text={elt.text.get()}></ProjetCard>)
+                      (section.records.length < 3) && section.records.map((elt, index2) => <ProjetCard key={index2} img={elt.image.get()} title={elt.title.get()} text={elt.text.get()}/>)
+                    }
+                    
+                    {  
+                      // (3 <= section.records.length) && <>
+                      //   <div className='flex flex-col xl:flex-row md:flex-col gap-8'>
+
+                      //     <div className='outline-2.5 outline w-full flex gap-3 justify-between cursor-pointer h-fit flex-col p-2 shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-md'>
+                      //       <div className='w-full aspect-video bg-center bg-cover rounded-sm ' style={{ backgroundImage: `url(${section.records[0].image.get()})` }}></div>
+
+                      //       <div>
+                      //         <div className="text-gray-500 font-bold text-2xl text-center">{section.records[0].title.get().toUpperCase()}</div>
+                      //         <div className='w-full aspect-auto py-3 pl-2 text-black text-md font-bold'>{section.records[0].text.get()}</div>
+                      //       </div>
+                      //     </div >
+
+                      //     <div className='flex gap-2 w-full h-fit flex-col'>
+
+                      //       <div className='projet flex outline h-72 outline-1 md:flex-row overflow-hidden flex-col gap-3 p-2 w-full shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-sm'>
+                      //         <div className='w-full aspect-square bg-cover rounded-sm bg-center' style={{ backgroundImage: `url('${section.records[1].image.get()}')` }}></div>
+                      //         <div className='w-full aspect-auto py-3 pl-2 text-black text-sm flex flex-col'>
+                      //           <div className='text-gray-500 text-2xl mb-1'>{section.records[1].title.get()}</div>
+                      //           <div className='text-black h-full flex flex-col justify-center'>
+                      //             {section.records[1].text.get()}
+                      //           </div>
+                      //         </div>
+                      //       </div>  
+
+                      //       <div className='projet flex outline outline-1 md:flex-row overflow-hidden flex-col gap-3 p-2 w-full shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-sm'>
+                      //         <div className='w-full aspect-video bg-cover rounded-sm bg-center' style={{ backgroundImage: `url('${section.records[1].image.get()}')` }}></div>
+                      //         <div className='w-full aspect-auto py-3 pl-2 text-black text-sm flex flex-col'>
+                      //           <div className='text-gray-500 text-2xl mb-1'>{section.records[1].title.get()}</div>
+                      //           <div className='text-black h-full flex flex-col justify-center'>
+                      //             {section.records[1].text.get()}
+                      //           </div>
+                      //         </div>
+                      //       </div>  
+
+                      //     </div >
+
+                      //   </div>
+
+                      // </> 
+                      section.records.map((elt, index2) => <ProjetCard key={index2} img={elt.image.get()} title={elt.title.get()} text={elt.text.get()} pos={true}/>)
+                    
+                
                     }
                   </div>
                 </div>
