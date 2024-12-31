@@ -7,17 +7,15 @@ import { Link } from "react-router-dom";
 function Gallery() {
 
   let [menuOpen, setMenuOpen] = useState(false);
-  const store = useHookstate(globalStore);
+  const store = useHookstate(imageStore);
 
-  const [services, setServices] = useState();
 
   useEffect(() => {
-    loadGallery();
-
+    
     (async () => {
-      await loadGlobalStore();
-      setServices(store[0].records)
-      // console.log(store.get());
+      await loadGallery();
+
+      console.log(store.get());
     })()
   }, [])
 

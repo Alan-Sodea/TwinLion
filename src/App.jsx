@@ -57,8 +57,8 @@ function App() {
   useEffect(() => {
     (async () => {
       await loadGlobalStore();
+      
       setServices(store[0].records)
-      // console.log(store.get());
     })()
 
     // console.log({printnow : store[0].records.get()})
