@@ -179,7 +179,7 @@ function App() {
                     let md = "col-span-1";
                     let xl = "col-span-1";
                     let total = section.records.length; 
-                    let target = 0;
+                    let target = 3;
                     
                     if (total%2 == 1)
                     {
