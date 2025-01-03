@@ -189,7 +189,7 @@ function App() {
                     if (total%3 == 1)
                     {
 
-                      if (index2 == 0) {
+                      if (index2 == target) {
                         return <>
                           <div key={index2} className={`lg:col-span-3 md:col-span-2  outline outline-1`}>
                             <div className='projet outline-amber-400 outline-3 flex outline md:flex-row overflow-hidden flex-col gap-3 p-2 w-full shadow-lg shadow-black rounded-sm hover:shadow-xl hover:shadow-black hover:rounded-sm'>
